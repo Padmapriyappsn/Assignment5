@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <h2>Students</h2>
+                <hr />
+
+                {{#unless students}}
+                    <div class="col-md-12 text-center">
+                        <strong>{{message}}</strong>
+                    </div>
+                {{else}}
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Student Num</th>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Status</th>
+                                    <th>Course ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each students}}
+                                    <tr>
+                                        <td>{{studentNum}}</td>
+                                        <td class="underline"><a href="/student/{{studentNum}}">{{firstName}} {{lastName}}</a></td>
+                                        <td class="underline"><a href="mailto:{{email}}">{{email}}</a></td>
+                                        <td>{{addressStreet}} {{addressCity}} {{addressProvince}}</td>
+                                        <td>{{status}}</td>
+                                        <td class="underline"><a href="/students?course={{courseID}}">{{course}}</a></td>
+                                        <!--td class="underline">
+                                            {{#each ../courses}}
+                                            {{#if (equal this.courseId ../this.enrolledCourse)}}
+                                                {{this.courseDescription}}
+                                            {{/if}}
+                                            {{/each}}
+                                        </td-->
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                {{/unless}}
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional for table responsiveness) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
