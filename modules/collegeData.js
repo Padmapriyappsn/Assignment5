@@ -152,7 +152,7 @@ module.exports.addStudent = function (student,courseId) {
         // Add the new student to the collection
         dataCollection.students.push(newStudent);
 
-       const studentPath = path.resolve(__dirname, '../data', 'students.json');
+       /*const studentPath = path.resolve(__dirname, '../data', 'students.json');
         // Save updated student data to file (assuming students.json)
         fs.writeFile(studentPath, JSON.stringify(dataCollection.students, null, 2), (err) => {
             if (err) {
@@ -161,7 +161,7 @@ module.exports.addStudent = function (student,courseId) {
             }
             resolve(newStudent);
         });
-        
+        */
         //resolve(newStudent);
     });
 };
