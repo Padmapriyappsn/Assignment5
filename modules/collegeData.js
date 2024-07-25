@@ -147,7 +147,7 @@ module.exports.addStudent = function (student,courseId) {
             status: student.status,
             //course: courseId // Assign course ID here
 			//enrolledCourse: courseId
-            enrolledCourse: parseInt(courseId)
+            enrolledCourse: parseInt(student.courseId)
         };
 
         // Add the new student to the collection
