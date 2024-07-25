@@ -146,8 +146,9 @@ module.exports.addStudent = function (student,courseId) {
             TA: TAvalue || false,
             status: student.status,
             //course: courseId // Assign course ID here
-			//enrolledCourse: courseId
-            enrolledCourse: parseInt(courseId)
+            //enrolledCourse: parseInt(courseId),
+            course: parseInt(courseId)
+
         };
 
         // Add the new student to the collection
