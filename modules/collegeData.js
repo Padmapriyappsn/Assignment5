@@ -162,7 +162,7 @@ module.exports.addStudent = function (student,courseId) {
             resolve(newStudent);
         });
         */
-        //resolve(newStudent);
+        resolve(newStudent);
     });
 };
 
